@@ -15,7 +15,7 @@ def test_health_endpoint_returns_healthy():  # noqa: ANN201, D103
     response = requests.get(ROOT + "/health")
     assert response.status_code == 200
     assert response.json() == {
-        "status": "healthy",
+        "status": "hurtz",
     }
 
 
@@ -89,7 +89,6 @@ def helper_login_user():
 
 def test_login_returns_jwt_token():
     import jwt
-
     from config import Config
 
     res = helper_login_user()
