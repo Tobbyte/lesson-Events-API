@@ -2,6 +2,7 @@
 import os
 
 import yaml  # pyright: ignore[reportMissingModuleSource] # noqa: F401
+from config import Config
 from flask import (  # pyright: ignore[reportMissingImports]
     Flask,
     jsonify,
@@ -14,8 +15,6 @@ from flask_jwt_extended import (  # pyright: ignore[reportMissingImports]
 from flask_swagger_ui import (  # pyright: ignore[reportMissingImports]
     get_swaggerui_blueprint,
 )
-
-from config import Config
 from models import db
 from routes.auth import auth_bp
 from routes.events import events_bp
@@ -93,7 +92,7 @@ def create_app() -> Flask:  # noqa: D103
     # Health check endpoint
     @app.route("/api/health", methods=["GET"])
     def health() -> tuple[dict[str, str], int]:
-        return jsonify({"status": "healthy"}), 200  # pyright: ignore[reportReturnType]
+        return jsonify({"status": "hurtz"}), 200  # pyright: ignore[reportReturnType]
 
     return app
 
