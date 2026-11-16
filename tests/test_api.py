@@ -30,6 +30,9 @@ def test_register_user_creates_new_user():
             },
         ), rnd_joe
 
+    # the very first user in a fresh DB becomes admin, so make sure it exists
+    create_new()
+
     response, rnd_joe = create_new()
     if response.status_code == 400:  # could be bad rnd luck
         response, rnd_joe = create_new()
